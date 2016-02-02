@@ -35,7 +35,6 @@ public class Primes {
 		}
 		
 		return true;
-		
 	}
 	
 	private static boolean[] sieve(int n) {
@@ -49,7 +48,7 @@ public class Primes {
 		
 		for(int i = 2; i <= m; i++) {
 			if(prime[i]) {
-				for(int k = i * i; k <= n; k +=i) {
+				for(int k = i * i; k <= n; k += i) {
 					prime[k] = false;
 				}
 			}
