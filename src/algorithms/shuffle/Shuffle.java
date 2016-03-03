@@ -1,4 +1,4 @@
-package shuffle;
+package algorithms.shuffle;
 
 /**
  * Knuth shuffle algorithm

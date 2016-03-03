@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package algorithms.dynamicprogramming;
 
 public class Fibonacci {
 	// O(2^n) Exponential time
