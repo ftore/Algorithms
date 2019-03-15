@@ -32,17 +32,32 @@ public class PowerSet {
 
     }
 
-    public static void main(String[] args) {
-        int[] A = {0, 1, 2};
 
-        Set<List<Integer>> result = generatePowerSet(A);
+    public static void powerSet(String soFar, String rest) {
+        if(rest.equals("")) {
+            System.out.println(soFar);
+        } else {
 
-        for(List<Integer> r : result) {
-            for (Integer i : r) {
-                System.out.print(i + " | ");
-            }
-
-            System.out.println();
+            // add to soFar, remove from rest, recur
+            powerSet(soFar + String.valueOf(rest.charAt(0)), rest.substring(1));
+            // do not add  to soFar, remove from rest, recur
+            powerSet(soFar, rest.substring(1));
         }
+    }
+
+    public static void main(String[] args) {
+//        int[] A = {0, 1, 2};
+//
+//        Set<List<Integer>> result = generatePowerSet(A);
+//
+//        for(List<Integer> r : result) {
+//            for (Integer i : r) {
+//                System.out.print(i + " | ");
+//            }
+//
+//            System.out.println();
+//        }
+
+        powerSet("", "ABC");
     }
 }

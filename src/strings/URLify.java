@@ -12,15 +12,16 @@ public class URLify {
         String str = in.nextLine();
 
         char[] A = str.toCharArray();
-        for(int i = 0; i < A.length; i++) {
-            if(A[i] == ' ') {
-                for(int j = 0; j < 2; j++) {
-                    moveRightByOne(A, ++i);
-                }
-            }
-        }
-
-        fill(A);
+//        for(int i = 0; i < A.length; i++) {
+//            if(A[i] == ' ') {
+//                for(int j = 0; j < 2; j++) {
+//                    moveRightByOne(A, ++i);
+//                }
+//            }
+//        }
+//
+//        fill(A);
+        urlify(A, 13);
 
         System.out.print(A);
     }
@@ -46,6 +47,21 @@ public class URLify {
                 arr[i++] = '2';
                 arr[i++] = '0';
             }
+        }
+    }
+
+    public static void urlify(char[] str, int n) {
+        int m = str.length;
+
+        for(int i = m - 1; i >= 0 && n >= 0; i--) {
+            if(str[n] != ' ') {
+                str[m] = str[n];
+            } else {
+                str[m--] = '0';
+                str[m--] = '2';
+                str[m--] = '%';
+            }
+
         }
     }
 }
